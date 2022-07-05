@@ -1,0 +1,278 @@
+@import 'vars'
+@import 'fonts'
+@import 'reset'
+@import 'libs'
+@import 'global'
+@import 'mixin'
+
+//header
+.header
+    &-top
+        padding: 20px 0
+        background-color: $dark
+        color: #fff
+    &__inner
+        align-items: center
+        justify-content: space-between
+    &-links
+        display: flex
+        align-items: center
+
+    &-links__item
+        &:not(:last-child)
+            margin-right: 60px
+    &-phone
+        align-items: center
+        display: flex
+        svg
+            margin-right: 10px
+
+    &-bottom
+        padding: 40px 0
+        li a
+            color: $primary
+    &-logo
+        width: 254px
+        height: 74px
+
+//banner
+
+.banner
+    margin-top: 100px
+    margin-bottom: 190px
+    &__inner
+        max-width: 947px
+        width: 100%
+    &__heading
+        font-family: "conthrax"
+        margin-bottom: 20px
+        span
+            color: $primary
+    &__text
+        margin-bottom: 60px
+        font-size: 28px
+        line-height: 39px
+        width: 275px
+    &-img
+        position: absolute
+        right: 0
+        bottom: 0
+
+//main-catalog
+.main-catalog
+    &__title
+        @include mb-50
+
+.catalog-tabs
+    &__inner
+        @include mb-50
+        align-items: center
+    &__title
+        margin-right: 30px
+
+.tabs
+    border-radius: 40px
+    background-color: $primary
+    padding: 5px
+
+.tab
+    position: relative
+    color: #fff
+    cursor: pointer
+    transition: all .3s
+    &.active
+        background-color: #fff
+        color: $dark
+        z-index: 3
+
+.tab-item
+    display: none
+    grid-column-gap: 30px
+    grid-row-gap: 30px
+    grid-template-columns: repeat(4, 1fr)
+    &.active-tab
+        display: grid
+
+.main-catalog-item
+    transition: transform .3s
+    &:hover
+        transform: translateY(-5px)
+    &__img
+        width: 360px
+        height: 270px
+    &__title
+        padding: 21px 0 60px 40px
+
+// manufactures
+.manufactures
+    padding: 60px 0
+    background-color: #ECF2FC
+    &__inner
+        align-items: center
+        justify-content: space-between
+    &-item
+        font-family: "conthrax"
+        letter-spacing: 0.03em
+        text-transform: uppercase
+        color: #C1D5F5
+
+// specials
+.specials
+
+    &__inner
+        align-items: flex-start
+        justify-content: space-between
+    &-content
+        max-width: 480px
+        width: 100%
+    &__title
+        @include mb-30
+    &__text
+        @include mb-60
+    &-slider
+        width: 880px
+    &-slider-btn
+        position: absolute
+        right: 40px
+        bottom: 174px
+        border-radius: 50%
+        width: 44px
+        height: 44px
+        padding: 18px
+        @include centerFlex
+        transition: all .3s
+        &:active
+            transform: translateY(3px)
+    .slick-prev
+        right: 100px
+        z-index: 1
+
+.specials-item
+    &__content
+        padding: 20px 40px 40px
+    &__img
+        width: 880px
+        height: 580px
+    &__title
+        @include mb-20
+    &__price
+        margin-bottom: 40px
+
+// delivery-steps
+.delivery-steps
+    &__title
+        max-width: 893px
+        width: 100%
+        @include mb-50
+    &__items
+        position: relative
+        justify-content: space-between
+        align-items: flex-start
+    &-line
+        position: absolute
+        top: 50px
+        left: 67px
+        z-index: -1
+
+.delivery-steps-item
+    width: 20%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__img
+        @include mb-20
+    &__title
+        text-align: center
+        max-width: 230px
+        width: 100%
+
+// advantages
+.advantages
+
+    &__inner
+        align-items: flex-start
+        justify-content: space-between
+    &-items
+        display: grid
+        grid-column-gap: 30px
+        grid-row-gap: 30px
+        grid-template-columns: repeat(2, 1fr)
+    &-content
+        max-width: 620px
+        width: 100%
+    &__title
+        @include mb-30
+    &__text
+        @include mb-60
+.advantages-item
+    padding: 40px 50px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__icon
+        margin-bottom: 10px
+    &__title
+        width: 260px
+        text-align: center
+        color: $primary
+// question-feedback
+.question-feedback
+
+    &__inner
+        justify-content: space-between
+        align-items: center
+        font-size: 28px
+        line-height: 39px
+    &__content
+        max-width: 352px
+        width: 100%
+
+    &__title
+        @include mb-30
+    &__text
+        color: $primary
+    &-form
+        background-color: $secondary
+        padding: 50px
+        box-shadow: 0px 10px 40px -10px rgba(33, 111, 181, 0.05)
+        border-radius: 40px
+    &-form__title
+        @include mb-20
+        color: #fff
+
+    &-form__input
+        background-color: #6C99DA
+        border-radius: 32px
+        margin-right: 20px
+        color: #132642
+        padding: 20px 30px
+        font-size: 18px
+        line-height: 24px
+        color: #fff
+        &::placeholder
+            color: #132642
+        &:focus
+            background-color: #fff
+.footer
+    background-color: $secondary
+    &__inner
+        padding: 100px 0
+        justify-content: space-between
+        color: #fff
+    &__logo
+        width: 254px
+        height: 74px
+    &-item:not(:last-child)
+        @include mb-20
+    &-contacts
+        display: flex
+        flex-direction: column
+    &-contacts__link
+        display: flex
+        align-items: center
+        svg
+            margin-right: 10px
+        &:not(:last-child)
+            @include mb-20

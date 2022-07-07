@@ -28,18 +28,44 @@
             margin-right: 10px
 
     &-bottom
-        padding: 40px 0
+        padding: 40px 0 0
+        position: fixed
+        top: 64px
+        right: 0
+        left: 0
+        width: 100%
+        transition: all .3s
         li a
             color: $primary
     &-logo
         width: 254px
         height: 74px
+        img
+            width: 80%
+            height: 100%
+
+.header-bottom.scroll
+    top: 0
+    padding-top: 10px
+    padding-bottom: 10px
+    background-color: #fff
+    z-index: 10
+    border-bottom: 1px solid rgba($secondary, 0.8)
+    .header-logo
+        width: 204px
+        height: 44px
+    .header-links
+        font-size: 16px
+        line-height: 22px
+    .header__cart
+        padding: 15px 20px
+        font-size: 16px
+        line-height: 22px
 
 //banner
-
 .banner
     position: relative
-    margin-top: 100px
+    margin-top: 214px
     padding-bottom: 190px
     &__inner
         max-width: 947px
@@ -50,9 +76,9 @@
         span
             color: $primary
     &__text
-        margin-bottom: 60px
-        font-size: 28px
-        line-height: 39px
+        margin-bottom: 3.1vw
+        font-size: 1.45vw
+        line-height: 1.8vw
         width: 275px
     &-img
         position: absolute
@@ -60,13 +86,8 @@
         bottom: 0
 
 //main-catalog
-.main-catalog
-    &__title
-        @include mb-50
-
 .catalog-tabs
     &__inner
-        @include mb-50
         align-items: center
     &__title
         margin-right: 30px
@@ -95,10 +116,15 @@
         display: grid
 
 .main-catalog-item
-    transition: transform .3s
+
+    transition: all .3s
     &:hover
-        transform: translateY(-5px)
+        padding: 5px 5px 0px 5px
+        background-color: $secondary
+        box-shadow: 0px 10px 40px -10px rgba(33, 111, 181, 0.05)
+        color: #fff
     &__img
+        border-radius: 35px
         width: 360px
         height: 270px
     &__title
@@ -126,10 +152,9 @@
     &-content
         max-width: 480px
         width: 100%
-    &__title
-        @include mb-30
+
     &__text
-        @include mb-60
+        margin-bottom: 60px
     &-slider
         width: 880px
     &-slider-btn
@@ -154,8 +179,9 @@
     &__img
         width: 880px
         height: 580px
-    &__title
-        @include mb-20
+        img
+            width: 100%
+            height: 100%
     &__price
         margin-bottom: 40px
 
@@ -164,7 +190,6 @@
     &__title
         max-width: 893px
         width: 100%
-        @include mb-50
     &__items
         position: relative
         justify-content: space-between
@@ -172,7 +197,10 @@
     &-line
         position: absolute
         top: 50px
-        left: 67px
+        left: 0
+        right: 0
+        margin: 0 auto
+        width: 100%
         z-index: -1
 
 .delivery-steps-item
@@ -182,7 +210,6 @@
     justify-content: center
     align-items: center
     &__img
-        @include mb-20
     &__title
         text-align: center
         max-width: 230px
@@ -202,10 +229,9 @@
     &-content
         max-width: 620px
         width: 100%
-    &__title
-        @include mb-30
     &__text
-        @include mb-60
+        margin-bottom: 60px
+
 .advantages-item
     padding: 40px 50px
     display: flex
@@ -218,20 +244,15 @@
         width: 260px
         text-align: center
         color: $primary
+
 // question-feedback
 .question-feedback
-
     &__inner
         justify-content: space-between
         align-items: center
-        font-size: 28px
-        line-height: 39px
     &__content
         max-width: 352px
         width: 100%
-
-    &__title
-        @include mb-30
     &__text
         color: $primary
     &-form
@@ -240,22 +261,19 @@
         box-shadow: 0px 10px 40px -10px rgba(33, 111, 181, 0.05)
         border-radius: 40px
     &-form__title
-        @include mb-20
         color: #fff
 
     &-form__input
-        background-color: #6C99DA
+        background-color: #C1D5F5
         border-radius: 32px
         margin-right: 20px
         color: #132642
         padding: 20px 30px
         font-size: 18px
         line-height: 24px
-        color: #fff
         &::placeholder
             color: #132642
-        &:focus
-            background-color: #fff
+
 .footer
     background-color: $secondary
     &__inner
@@ -266,14 +284,16 @@
         width: 254px
         height: 74px
     &-item:not(:last-child)
-        @include mb-20
+        margin-bottom: 20px
     &-contacts
         display: flex
         flex-direction: column
     &-contacts__link
         display: flex
         align-items: center
+        &:not(:last-child)
+            margin-bottom: 20px
         svg
             margin-right: 10px
-        &:not(:last-child)
-            @include mb-20
+
+@import 'media'

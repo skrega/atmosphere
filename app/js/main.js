@@ -1,4 +1,20 @@
 $(function () {
+
+    // var header = $('.header-bottom'),
+    //     scrollPrev = 0;
+
+
+    // $(window).on('scroll', function () {
+    //     var scrolled = $(window).scrollTop();
+
+    //     if (scrolled > 100 && scrolled > scrollPrev) {
+    //         header.addClass('scroll');
+    //     } else {
+    //         header.removeClass('scroll');
+    //     }
+    //     scrollPrev = scrolled;
+    // });
+
     // tabs
     $('.catalog-tabs .tab').on('click', function (event) {
         var id = $(this).attr('data-id');
@@ -21,3 +37,37 @@ $(function () {
     });
 
 })
+
+var cbpAnimatedHeader = (function () {
+
+    var docElem = document.documentElement,
+        header = document.querySelector('.header-bottom'),
+        didScroll = false,
+        changeHeaderOn = 50;
+
+    function init() {
+        window.addEventListener('scroll', function (event) {
+            if (!didScroll) {
+                didScroll = true;
+                setTimeout(scrollPage, 250);
+            }
+        }, false);
+    }
+
+    function scrollPage() {
+        var sy = scrollY();
+        if (sy >= changeHeaderOn) {
+            header.classList.add('scroll');
+        } else {
+            header.classList.remove('scroll');
+        }
+        didScroll = false;
+    }
+
+    function scrollY() {
+        return window.pageYOffset || docElem.scrollTop;
+    }
+
+    init();
+
+})();
